@@ -1,7 +1,7 @@
 # To do check list
 > ## Domain logic
 > - ~~**Verbs**~~
-> - **Nouns**
+> - ~~**Nouns**~~
 > - **Adjectives**
 > - **Adverbs**
 > - **Participles**
