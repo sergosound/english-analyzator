@@ -1,9 +1,9 @@
-import { vowels } from "../alphabet.js";
+import { vowels } from "../../lib/alphabet.js";
 
-// Rule: [["s" || "o", "+es"], ["y", "=ies"], [otherVowels|otherConsonants, "+s"]]
+// Rule: [["s" || "o", "+es"], ["y", "=ies"], [otherVowels|otherConsonants, "+s"]];
 // Explanation: "+" => addition; "=" => replacing;
 
-class EndOfVerb {
+class End {
   _type;
   resultEnd;
 
@@ -43,12 +43,12 @@ class EndOfVerb {
 
   getInfo() {
     return {
-      endSymbol: this.endSymbol,
       _type: this._type,
+      endSymbol: this.endSymbol,
       resultEnd: this.resultEnd,
       needReplace: this.needReplace,
     };
   }
 }
 
-export default EndOfVerb;
+export default End;

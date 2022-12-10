@@ -2,11 +2,15 @@
   "name": "english-analyzator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Serhii Dirko",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "readline": "^1.3.0"
+  }
 }

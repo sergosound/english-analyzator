@@ -1,3 +1,10 @@
+function getAnEndOfVerb(verb) {
+  const lastSymbol = verb[verb.length - 1];
+}
+
+function addAnEndForVerb(verb) {}
+getAnEndOfVerb("qwer");
+
 const verbs = [
   "do",
   "make",
