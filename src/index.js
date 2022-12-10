@@ -6,4 +6,4 @@ async function start() {
   await setup();
 }
 
-start();
+await start();

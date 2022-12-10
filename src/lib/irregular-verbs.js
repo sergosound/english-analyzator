@@ -1,30 +1,18 @@
-import { createInterface } from "readline";
-import * as fs from "fs";
+"use strict";
 
-export function makeIrregularVerbsStructure(inputFile) {
-  return new Promise((resolve, reject) => {
-    const irregularVerbs = {};
+import path from "node:path";
+import { mapFile } from "../utils.js";
 
-    try {
-      const lineReader = createInterface({
-        input: fs.createReadStream(inputFile),
-      });
+function reader(line, result) {
+  const lineData = line.split("\t");
 
-      lineReader
-        .on("line", (line) => {
-          const lineData = line.split("\t");
-
-          irregularVerbs[lineData[0]] = {
-            infinitive: lineData[0],
-            pastSimple: lineData[1],
-            pastParticiple: lineData[2],
-          };
-        })
-        .on("close", () => {
-          resolve(irregularVerbs);
-        });
-    } catch (error) {
-      reject(error);
-    }
-  });
+  result[lineData[0]] = {
+    infinitive: lineData[0],
+    pastSimple: lineData[1],
+    pastParticiple: lineData[2],
+  };
 }
+
+const filePath = path.join(process.cwd(), "./src/lib/irregular-verbs.exc");
+
+export default mapFile.bind(null, filePath, reader, {});

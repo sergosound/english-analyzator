@@ -1,8 +1,9 @@
 class Repository {
   irregularVerbs;
   isReady = false;
-  addIrregularVerbs(irregularVerbs) {
-    this.irregularVerbs = irregularVerbs;
+
+  add(field, data) {
+    this[field] = data;
   }
 }
 

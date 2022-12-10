@@ -1,11 +1,12 @@
-import { makeIrregularVerbsStructure } from "./lib/irregular-verbs.js";
+import mapNouns from "./lib/nouns.js";
+import mapIrregularVerbs from "./lib/irregular-verbs.js";
 import Repository from "./classes/Repository/index.js";
 
 export async function setup() {
-  const irregularVerbs = await makeIrregularVerbsStructure(
-    "./lib/irregular-verbs.exc"
-  );
+  const nouns = await mapNouns();
+  const irregularVerbs = await mapIrregularVerbs();
 
-  Repository.addIrregularVerbs(irregularVerbs);
+  Repository.add("nouns", nouns);
+  Repository.add("irregularVerbs", irregularVerbs);
   Repository.isReady = true;
 }

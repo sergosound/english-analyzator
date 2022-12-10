@@ -5,7 +5,7 @@ import http from "node:http";
 import path from "node:path";
 
 const PORT = 8000;
-const STATIC_PATH = path.join(process.cwd(), "./static");
+const STATIC_PATH = path.join(process.cwd(), "./src/static");
 
 export default function createServer() {
   http
